@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 750px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+h1 { color: #2c3e50; text-align: center; margin-bottom: 5px; }
+p.subtitle { text-align: center; color: #7f8c8d; margin-bottom: 25px; }
+label { font-weight: bold; color: #34495e; display: block; margin-bottom: 6px; }
+select, textarea {
+    width: 100%; padding: 10px; border: 1px solid #ccc;
+    border-radius: 6px; font-size: 14px; box-sizing: border-box; margin-bottom: 15px;
+}
+textarea { height: 110px; resize: vertical; }
+button {
+    width: 100%; background-color: #3498db; color: white;
+    border: none; padding: 12px; font-size: 16px; border-radius: 6px;
+    cursor: pointer; font-weight: bold;
+}
+button:hover { background-color: #2980b9; }
+.response-box {
+    margin-top: 25px; padding: 18px; background-color: #eef7fc;
+    border-left: 5px solid #3498db; border-radius: 4px;
+    white-space: pre-wrap; line-height: 1.6;
+}
+.badge {
+    display: inline-block; background: #e0e0e0; color: #333;
+    padding: 4px 8px; border-radius: 4px; font-size: 12px;
+    font-weight: bold; margin-bottom: 10px;
+}

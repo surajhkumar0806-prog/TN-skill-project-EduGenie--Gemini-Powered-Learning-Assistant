@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie - AI Learning Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <h1>🧞 EduGenie</h1>
+        <p class="subtitle">Multi-Model AI Learning Portal</p>
+
+        <form action="/generate" method="post">
+            <label for="task">Select AI Task & Model:</label>
+            <select name="task" id="task">
+                <option value="concept" {% if task == 'concept' %}selected{% endif %}>💡 Concept Explanation (Local LaMini-Flan-T5)</option>
+                <option value="qa" {% if task == 'qa' %}selected{% endif %}>❓ General Q&A (Gemini 3.8 flash)</option>
+                <option value="summary" {% if task == 'summary' %}selected{% endif %}>📄 Summarization (Gemini 3.8 flash)</option>
+                <option value="quiz" {% if task == 'quiz' %}selected{% endif %}>📝 Quiz Generation (Gemini 3.8 flash)</option>
+                <option value="path" {% if task == 'path' %}selected{% endif %}>🗺️ Learning Path Generation (Gemini 3.8 flash)</option>
+            </select>
+
+            <label for="prompt">Your Query / Topic:</label>
+            <textarea name="prompt" id="prompt" placeholder="Type a concept, question, or topic..." required>{{ prompt }}</textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+
+        {% if response %}
+            <div class="response-box">
+                <span class="badge">Model: {{ model_used }}</span><br>
+                <strong>Output:</strong>
+                <p>{{ response }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
